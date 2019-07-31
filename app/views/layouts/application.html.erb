@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LinksTags</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <% if current_user %>
+        <a class="navbar-brand" href="/">Hi <%= current_user.full_name %>!</a>
+        <ul class="navbar-nav ml-auto">
+          <%= link_to new_link_path, class: "nav-links" do %>
+            <i class="ion-ios-plus"></i> Add link
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete, class: "nav-links" do %>
+            <i class="ion-log-out"></i> Logout
+          <% end %>
+        </ul>
+      <% else %>
+        <ul class="navbar-nav ml-auto">
+          <%= link_to new_user_registration_path, class: "nav-links" do %>
+            <i class="ion-android-person-add"></i> Sign up
+          <% end %>
+          <%= link_to new_user_session_path, class: "nav-links" do %>
+            <i class="ion-log-in"></i> Login
+          <% end %>
+        </ul>
+      <% end %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

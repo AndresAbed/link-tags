@@ -1,0 +1,34 @@
+<% if flash[:error] %>
+  <div class="alert alert-danger">
+    <%= flash[:error] %>
+  </div>
+<% end %>
+<% if flash[:success] %>
+  <div class="alert alert-success">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Link</th>
+      <th scope="col">Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if current_user.links.any? %>
+      <% current_user.links.each do |link| %>
+        <tr>
+          <td><%= link.id %></td>
+          <td><%= link.link %></td>
+          <td><%= link.tags.join(', ') %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="5" style="text-align: center;">No links</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

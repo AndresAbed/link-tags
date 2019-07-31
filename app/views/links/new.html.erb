@@ -1,0 +1,13 @@
+<%= form_for @link, url: links_path do |link| %>
+  <div class="form-group">
+    <%= link.label :link %>
+    <%= link.text_field :link, autofocus: true, class: "form-control", id: "link" %>
+    <%= link.label :tag_list, "Tags (separated by commas)" %>
+    <%= link.text_field :tag_list, class: "form-control" %>
+    <div id="tags_suggestions"></div>
+  </div>
+
+  <div class="form-group">
+    <%= button_tag 'Save', class: "btn btn-primary" %>
+  </div>
+<% end %>

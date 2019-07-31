@@ -1,0 +1,60 @@
+@import "bootstrap";
+@import "ionicons";
+
+.navbar{
+  padding: 15px 10px;
+
+  p.navbar-brand{
+    margin: 0;
+  }
+
+  .navbar-nav{
+    display: inline;
+  }
+
+  .nav-links{
+    color: #9d9d9d;
+    margin: 0 10px;
+    &:hover{
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+form.new_link{
+  width: 50%;
+  margin: 30px auto;
+  text-align: center;
+
+  .form-control{
+    margin: 10px 0;
+  }
+
+  label{
+    background-color: #343a40;
+    color: white;
+    padding: 5px 30px;
+    border-radius: 3px;
+    margin: 10px 0;
+  }
+
+  button{
+    width: 100%;
+  }
+
+  #tags_suggestions{
+    display: block;
+    margin: 20px 0;
+
+    .suggestions{
+      display: inline;
+      margin: 0 10px;
+      background-color: orange;
+      color: white;
+      padding: 8px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  }
+}
