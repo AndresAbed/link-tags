@@ -11,7 +11,7 @@ class LinksController < ApplicationController
   def create
     link = current_user.links.new(link_params)
     if link.save
-      redirect_to :authenticated_root, flash: { success: "Linke created" }
+      redirect_to :authenticated_root, flash: { success: "Link created" }
     else
       errors = link.errors.full_messages.to_sentence
       redirect_to :authenticated_root, flash: { error: errors }
